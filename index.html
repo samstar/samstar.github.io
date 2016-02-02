@@ -5,12 +5,166 @@
     <meta name="baidu-site-verification" content="d1UbjJWV9F" />
     <meta name="baidu-site-verification" content="y8MCy0Gkz1" />
     <meta charset="UTF-8">
-    <title></title>
+    <title>阿猛的主页</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.7/jquery.fullPage.css">
+    <style>
+        *{margin:0;padding:0;}
+        ul,li{list-style:none;}
+        a{text-decoration:none;color:inherit;}
+        html,body,.wrapper{width:100%;height:100%;overflow:hidden;}
+        html{background-color:#fff;cursor:pointer;}
+        .wrapper{position:relative;margin: 0 auto;}
+        .center{position:absolute;top:50%;left:50%;margin-top:-150px;margin-left:-150px;padding:100px 20px 0;width:300px;height:300px;text-align:center;font-size:30px;color:rgba(0,0,0,0.9);background-color:yellow;border-radius:50%;box-sizing:border-box;}
+        .center p{opacity:0;animation: slowShow 1s linear 5.5s forwards;}
+        #menu{position:fixed;top:0;left:0;width:100%;padding:0 240px;margin: 0 auto;height:100px;line-height:100px;box-sizing:border-box;background-color:#fff;z-index:1000;display:flex;display:-webkit-flex;display:-webkit-box;display:-ms-flexbox;dispaly:-moz-box;justify-content:center;-webkit-justify-content:center;align-items:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-pack:justify;-webkit-box-pack:justify;box-pack:justify;}
+        #menu li{height:100%;text-align:center;box-flex:1;-webkit-box-flex:1;-moz-box-flex:1;font-size:30px;}
+        #menu li a{
+            font-family:Michroma,'Segoe UI Light','Segoe UI','Segoe UI WP','Microsoft Jhenghei','微软雅黑',tahoma,'Hiragino Sans GB W3';
+            -webkit-font-smoothing:antialiased;
+            font-family:Michroma,'Segoe UI WP','Microsoft Jhenghei','微软雅黑',sans-serif /9;
+        }
+        #menu li a:link, #menu li a:visited, #menu li a:active{
+            color: #888;
+            text-shadow: 0 0 2px #aaa;
+            -webkit-transition: text-shadow 250ms ease-in 0ms, color 250ms ease-in 0ms;
+            -moz-transition: text-shadow 250ms ease-in 0ms, color 250ms ease-in 0ms;
+            -ms-transition: text-shadow 250ms ease-in 0ms, color 250ms ease-in 0ms;
+            -o-transition: text-shadow 250ms ease-in 0ms, color 250ms ease-in 0ms;
+            transition: text-shadow 250ms ease-in 0ms, color 250ms ease-in 0ms;
+        }
+        #menu li a:hover, .menu li a:focus{ 
+            color:#f15b82;
+            text-shadow:0 0 1px #666, 0 0 2px #666; 
+            -webkit-transition: text-shadow 250ms ease-in 0ms, color 250ms ease-in 0ms;
+            -moz-transition: text-shadow 250ms ease-in 0ms, color 250ms ease-in 0ms;
+            -ms-transition: text-shadow 250ms ease-in 0ms, color 250ms ease-in 0ms;
+            -o-transition: text-shadow 250ms ease-in 0ms, color 250ms ease-in 0ms;
+            transition: text-shadow 250ms ease-in 0ms, color 250ms ease-in 0ms;
+        }
+
+        .fp-controlArrow.fp-prev{border-color:transparent rgba(255,255,255,0.4) transparent transparent;}
+        .fp-controlArrow.fp-next{border-color:transparent transparent transparent rgba(255,255,255,0.4);}
+        .section{overflow:hidden;}
+        .section .main img{max-width:100%;max-height:100%;margin-top:100px;box-sizing:border-box;}
+        .me{overflow:hidden;}
+        .me .me-img{position:absolute;top:50%;border-radius:50%;overflow:hidden;}
+        .me .me-img-1{left:50%;margin-top:-260px;margin-left:-300px;animation:fadeInLeft 1s ease-in-out 1s forwards;}
+        .me .me-img-2{left:50%;margin-top:90px;margin-left:-300px;animation:fadeInLeft 1s ease-in-out 2s forwards;}
+        .me .me-img-3{right:50%;margin-top:-260px;margin-right:-300px;animation:fadeInRight 1s ease-in-out 4s forwards;}
+        .me .me-img-4{right:50%;margin-top:90px;margin-right:-300px;animation:fadeInRight 1s ease-in-out 3s forwards;}
+        .me .me-img img{display:block;width:180px;height:180px;}
+        @keyframes fadeInLeft{
+            0%{opacity:1;transform:rotate(0);}
+            100%{margin-top:-90px;margin-left:-90px;opacity:0.5;transform:rotate(360deg);}
+        }
+        @keyframes fadeInRight{
+            0%{opacity:1;transform:rotate(0);}
+            100%{margin-top:-90px;margin-right:-90px;opacity:0.5;transform:rotate(360deg);}
+        }
+        @keyframes slowShow{
+            0%{opacity:0;}
+            40%{opacity:1;}
+            60%{transform:scale(1.5,1.5);opacity:1;}
+            80%{transform:scale(0.9,0.9);opacity:1;}
+            96%{transform:scale(1.1,1.1);opacity:1;}
+            100%{transform:none;opacity:1;}
+        }
+        .blog{margin-left:100px;margin-top:200px;font-size:40px;color:#fff;}
+    </style>
 </head>
 <body>
     <div class="wrapper">
-        <div class="main">111</div>
+        <ul id="menu">
+        </ul>
+        <div id="fullpage">
+            <div class="section" data-anchor="firstPage">
+                <div class="main">
+                    <p>五千年的风和雨啊~~</p>
+                    <img src="http://s.cn.bing.net/az/hprichbg/rb/UpsideDown_ZH-CN11824550636_1920x1080.jpg" alt="" />
+                </div>
+                <div class="me">
+                    <div class="me-img me-img-1">
+                        <img src="images/beauty.png" alt="" />
+                    </div>
+                    <div class="me-img me-img-2">
+                        <img src="images/beauty.png" alt="" />
+                    </div>
+                    <div class="me-img me-img-3">
+                        <img src="images/beauty.png" alt="" />
+                    </div>
+                    <div class="me-img me-img-4">
+                        <img src="images/beauty.png" alt="" />
+                    </div>
+                </div>
+            </div>
+            <div class="section" data-anchor="secondPage">
+                <p class="blog"><a href="http://easyzhidao.com/blog">My Blog : 点击这里~~</a></p>
+            </div>
+            <div class="section" data-anchor="3rdPage">3333</div>
+            <div class="section" data-anchor="4thPage">444</div>
+        </div>
+        <div class="main">
+            <div class="center"><p>前端攻城狮哈哈哈~~~卖萌</p></div>
+            <img src="images/star_full.png" alt="" />
+        </div>
     </div>
-<script src="http//cdn.bootcss.com/jquery/3.0.0-beta1/jquery.js"></script>
+    <script type="text/template" id="demo">
+        {{ for(var key in it){ }}
+            <li data-menuanchor="{{=key}}"><a href="#{{=key}}">{{=it[key]}}</a></li>
+        {{ } }}
+    </script>
+<script src="doT.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.0.0-beta1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.7/jquery.fullPage.js"></script>
+<script>
+    ({
+        init: function(){
+            var propertyNames = Object.getOwnPropertyNames(this);
+            console.log(propertyNames);
+            var data = {
+                nav: {
+                    "firstPage": '首页',
+                    "secondPage": '博客',
+                    "3rdPage": 'demo',
+                    "4thPage": '关于我',
+                    "5vePage": '关于涅米'
+                },
+                content: {
+                }
+            };
+            this.rendered('#demo', data.nav, '#menu');
+        },
+        rendered: function(el, data, container){
+            container = container || this.container;
+            var htm = $(el).html();
+            var temp = doT.template(htm);
+            $(container).append(temp(data));
+            
+        }
+    }).init();
+</script>
+<script>
+    ({
+        init: function(){
+            this.initEvent();
+        },
+        initEvent: function(){
+            var url = "http://172.16.1.20:10001/test.html";
+            $.get(url,{
+            }).done(function(o){
+                console.log('done');
+                console.log(o['data']);
+            });
+            $('#fullpage').fullpage({
+                menu: '#menu',
+                sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'transparent', '#ccddff'],
+                anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', 'lastPage'],
+                css3: true,
+                easing: 'easeInOutCubic',
+                scrollingSpeed: 1000
+            });
+        }
+    }).init();
+</script>
 </body>
 </html>
