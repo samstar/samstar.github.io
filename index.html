@@ -5,14 +5,18 @@
     <meta name="baidu-site-verification" content="d1UbjJWV9F" />
     <meta name="baidu-site-verification" content="y8MCy0Gkz1" />
     <meta charset="UTF-8">
-    <title>阿猛的主页</title>
+    <title class="title">阿猛的主页</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.7/jquery.fullPage.css">
+    <link rel="shortcut icon" href="http://7te85s.com2.z0.glb.qiniucdn.com/web-favicon.ico" type="image/x-icon">
     <style>
         *{margin:0;padding:0;}
         ul,li{list-style:none;}
         a{text-decoration:none;color:inherit;}
         html,body,.wrapper{width:100%;height:100%;overflow:hidden;}
         html{background-color:#fff;cursor:pointer;}
+        
+        .title{padding-left:10px;background:url("images/beauty.png") no-repeat 0 0;background-size:cover;}
+
         .wrapper{position:relative;margin: 0 auto;}
         .center{position:absolute;top:50%;left:50%;margin-top:-150px;margin-left:-150px;padding:100px 20px 0;width:300px;height:300px;text-align:center;font-size:30px;color:rgba(0,0,0,0.9);background-color:yellow;border-radius:50%;box-sizing:border-box;}
         .center p{opacity:0;animation: slowShow 1s linear 5.5s forwards;}
@@ -104,7 +108,7 @@
             <div class="section" data-anchor="4thPage">444</div>
         </div>
         <div class="main">
-            <div class="center"><p>前端攻城狮哈哈哈~~~卖萌</p></div>
+            <div class="center"><div class="position"></div><p>前端攻城狮哈哈哈~~~卖萌</p></div>
             <img src="images/star_full.png" alt="" />
         </div>
     </div>
@@ -115,6 +119,20 @@
     </script>
 <script src="doT.js"></script>
 <script src="//cdn.bootcss.com/jquery/3.0.0-beta1/jquery.js"></script>
+<!--
+<script>
+    navigator.geolocation.getCurrentPosition(
+        function(position){
+        var cords = position.coords;
+            alert("当前经度："+cords.longtitude +", 纬度："+cords.latitude);
+        },
+        function(error){
+            var errorTypes={1:"位置服务被拒绝", 2:"获取不到位置信息", 3:"获取位置信息超时"};
+            alert( errorTypes[error.code] +":,不能确定当前地理位置");
+        }
+    );
+</script>
+-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.7/jquery.fullPage.js"></script>
 <script>
     ({
