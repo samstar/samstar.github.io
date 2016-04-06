@@ -12,14 +12,21 @@
         *{margin:0;padding:0;}
         ul,li{list-style:none;}
         a{text-decoration:none;color:inherit;}
-        html,body,.wrapper{width:100%;height:100%;overflow:hidden;}
-        html{background-color:#fff;cursor:pointer;}
+        body{
+            background:url(http://7xrl4d.com1.z0.glb.clouddn.com/static/image/body_bg.jpg) 50% no-repeat fixed #0a090d;
+            background-size:cover;
+            font-family:'Hiragino Sans GB',STHeiti,'Microsoft Yahei',helvetica,arial,sans-serif;
+            -webkit-font-smoothing:antialiased;
+            -moz-font-smoothing:antialiased;
+        }
+        .wrapper{background:inherit;}
+        .main{position:absolute;top:20px;right:30px;bottom:20px;width:320px;border-radius:10px;overflow:hidden;background:inherit;}
+        .main::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;filter: blur(10px) saturate(1.5);-webkit-filter: blur(10px) saturate(1.5);-moz-filter: blur(10px) saturate(1.5);background:inherit;}
+        .main-container{position:relative;width:100%;height:100%;background-color:rgba(255,255,255,0.3);}
         
 
-        .wrapper{position:relative;margin: 0 auto;padding-top:100px;}
-        .header{position:fixed;top:0;left:0;width:100%;padding:0 240px;margin: 0 auto;height:100px;line-height:100px;box-sizing:border-box;background-color:#fff;z-index:1000;overflow:hidden;}
-        .header .myName{float:left;font-size:50px;color:rgba(0,0,0,0.6);text-shadow:3px 3px 2px rgba(0,0,0,0.3);font-family:Michroma,'Segoe UI Light','Segoe UI','Segoe UI WP','Microsoft Jhenghei','微软雅黑',tahoma,'Hiragino Sans GB W3';}
-        #menu{float:right;width:300px;display:flex;display:-webkit-flex;display:-webkit-box;display:-ms-flexbox;dispaly:-moz-box;justify-content:center;-webkit-justify-content:center;align-items:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-pack:justify;-webkit-box-pack:justify;box-pack:justify;line-height:132px;}
+        .myName{text-align:left;padding:10px 0 0 10px;font-size:36px;color:#00aaee;text-shadow:4px 4px 5px rgba(0,0,0,0.3);font-family:Michroma,'Segoe UI Light','Segoe UI','Segoe UI WP','Microsoft Jhenghei','微软雅黑',tahoma,'Hiragino Sans GB W3';}
+        #menu{width:100%;display:flex;display:-webkit-flex;display:-webkit-box;display:-ms-flexbox;dispaly:-moz-box;justify-content:center;-webkit-justify-content:center;align-items:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-pack:justify;-webkit-box-pack:justify;box-pack:justify;line-height:50px;}
         #menu li{height:100%;text-align:center;box-flex:1;-webkit-box-flex:1;-moz-box-flex:1;font-size:20px;}
         #menu li a{
             font-family:Michroma,'Segoe UI Light','Segoe UI','Segoe UI WP','Microsoft Jhenghei','微软雅黑',tahoma,'Hiragino Sans GB W3';
@@ -27,7 +34,7 @@
             font-family:Michroma,'Segoe UI WP','Microsoft Jhenghei','微软雅黑',sans-serif /9;
         }
         #menu li a:link, #menu li a:visited, #menu li a:active{
-            color: #888;
+            color: #4bbfc3;
             text-shadow: 0 0 2px #aaa;
             -webkit-transition: text-shadow 250ms ease-in 0ms, color 250ms ease-in 0ms;
             -moz-transition: text-shadow 250ms ease-in 0ms, color 250ms ease-in 0ms;
@@ -44,26 +51,25 @@
             -o-transition: text-shadow 250ms ease-in 0ms, color 250ms ease-in 0ms;
             transition: text-shadow 250ms ease-in 0ms, color 250ms ease-in 0ms;
         }
+        .myDes{padding:10px;font-size:24px;color:#ccddff;}
 
     </style>
 </head>
 <body>
     <div class="wrapper">
-        <div class="header">
-            <div class="myName">单法猛</div>
-            <ul id="menu"></ul>
-        </div>
-        <div class="myDes">
-            <dl>
-                <dt>简介：</dt>
-                <dd>从事前端开发工作，就职于深圳美啦APP。</dd>
-                <dd>熟练使用</dd>
-            </dl>
+        <div class="main">
+            <div class="main-container">
+                <div class="side-content">
+                    <div class="myName">阿猛的小站</div>
+                    <ul id="menu"></ul>
+                    <div class="myDes">从不放弃奔跑，因为有梦在远方 -- by me</div>
+                </div>
+            </div>
         </div>
     </div>
     <script type="text/template" id="demo">
         {{ for(var key in it){ }}
-            <li data-menuanchor="{{=key}}"><a href="#{{=key}}">{{=it[key]}}</a></li>
+            <li data-menuanchor="{{=key}}"><a href="{{=key}}">{{=it[key]}}</a></li>
         {{ } }}
     </script>
 <script src="doT.js"></script>
@@ -89,10 +95,10 @@
             var propertyNames = Object.getOwnPropertyNames(this);
             var data = {
                 nav: {
-                    "firstPage": 'github',
-                    "secondPage": '博客',
-                    "3rdPage": 'demo',
-                    "4thPage": '关于我'
+                    "https://github.com/samstar": 'github',
+                    "http://easyzhidao.com/blog": '博客',
+                    "http://easyzhidao.com/demos": 'demo',
+                    "#": '关于我'
                 },
                 content: {
                 }
