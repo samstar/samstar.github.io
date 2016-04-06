@@ -51,7 +51,9 @@
             -o-transition: text-shadow 250ms ease-in 0ms, color 250ms ease-in 0ms;
             transition: text-shadow 250ms ease-in 0ms, color 250ms ease-in 0ms;
         }
-        .myDes{padding:10px;font-size:24px;color:#ccddff;}
+        .myDes{padding:10px;font-size:24px;color:#ccddff;display:none;}
+        .aboutMe{margin-top:50px;padding:10px;font-size:22px;color:#ccdd66;}
+        .aboutMe li{margin-bottom:20px;display:none;}
 
     </style>
 </head>
@@ -63,18 +65,24 @@
                     <div class="myName">阿猛的小站</div>
                     <ul id="menu"></ul>
                     <div class="myDes">从不放弃奔跑，因为有梦在远方 -- by me</div>
+                    <ul class="aboutMe">
+                        <li>从事前端开发</li>
+                        <li>喜欢新鲜的东西</li>
+                        <li>喜欢好玩的东西</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
     <script type="text/template" id="demo">
         {{ for(var key in it){ }}
-            <li data-menuanchor="{{=key}}"><a href="{{=key}}">{{=it[key]}}</a></li>
+            <li><a href="{{=key}}">{{=it[key]}}</a></li>
         {{ } }}
     </script>
 <script src="doT.js"></script>
 <script src="//cdn.bootcss.com/jquery/3.0.0-beta1/jquery.js"></script>
 <!--
+<script src="//cdn.bootcss.com/vue/1.0.17/vue.min.js"></script>
 <script>
     navigator.geolocation.getCurrentPosition(
         function(position){
@@ -87,8 +95,8 @@
         }
     );
 </script>
--->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.7/jquery.fullPage.js"></script>
+-->
 <script>
     ({
         init: function(){
@@ -104,6 +112,8 @@
                 }
             };
             this.rendered('#demo', data.nav, '#menu');
+            $('.myDes').show();
+            this.initEvent();
         },
         rendered: function(el, data, container){
             container = container || this.container;
@@ -111,6 +121,32 @@
             var temp = doT.template(htm);
             $(container).append(temp(data));
             
+        },
+        initEvent: function(){
+            //$('.main').on('mousedown',function(e){
+            //    e.stopPropagation();
+            //    var left = e.clientX,
+            //        top = e.clientY;
+            //    var left_move = 0,
+            //        top_move = 0;
+            //    $(this).css('cursor','move');
+            //    $(this).on('mousemove', function(ev){mouseMove(ev || event)});
+            //    function mouseMove(e){
+            //        left_move = e.clientX - left;
+            //        top_move = e.clientX - top;
+            //        $(this).css({
+            //                        "transform":"translate("+left_move+"px,"+top_move+"px)",
+            //                        "-webkit-transform":"translate("+left_move+"px,"+top_move+"px)"
+            //                    })
+            //    }
+            //});
+            if($('#menu li').length > 0 ){
+                $('#menu li').last().on('click',function(){
+                    for(var i=0; i<$('.aboutMe li').length; i++){
+                        $('.aboutMe li').eq(i).fadeIn(1600*i);
+                    }
+                });
+            }
         }
     }).init();
 </script>
